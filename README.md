@@ -184,7 +184,7 @@ Possible improvements to this project include:
 
 ## Author
 
-**Artea Myftiu**
+**A M**
 
 Master's in Data Science & Business Analytics  
-University of New York Tirana
+UNYT

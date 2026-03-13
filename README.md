@@ -14,6 +14,7 @@ This project aims to develop a predictive model that can help identify individua
 ---
 
 ## Dataset
+
 The dataset contains medical attributes such as:
 
 - Age
@@ -23,9 +24,8 @@ The dataset contains medical attributes such as:
 - Cholesterol levels
 - Maximum heart rate
 - ST depression
-- Other clinical measurements
 
-The dataset is commonly used in machine learning research for heart disease prediction.
+Source: UCI Heart Disease Dataset
 
 ---
 
@@ -68,7 +68,7 @@ The models were evaluated using classification metrics such as:
 - Recall
 - F1-score
 
-The best-performing model achieved strong predictive performance on the test dataset.
+Random Forest achieved the best performance with an AUC score of approximately **0.93**, outperforming Logistic Regression.
 
 ---
 

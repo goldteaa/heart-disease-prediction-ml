@@ -1,164 +1,35 @@
-# heart-disease-prediction-ml
-Machine learning pipeline for predicting heart disease using Logistic Regression and Random Forest with Python, Pandas, and Scikit-learn.
-
-
 # Heart Disease Prediction using Machine Learning
 
-This project builds a complete **machine learning pipeline** to predict the presence of heart disease using clinical data. The model analyzes patient features such as age, blood pressure, cholesterol levels, and ECG results to estimate the probability of heart disease.
+## Project Overview
+This project builds a machine learning model to predict the presence of heart disease using clinical patient data.
 
-The goal of this project is to demonstrate how machine learning can support **early risk detection and clinical decision-making**.
+The goal is to demonstrate a complete machine learning workflow including data preprocessing, exploratory data analysis, feature engineering, model training, and evaluation.
+
+---
+
+## Objective
+Early detection of heart disease is critical for improving patient outcomes.  
+This project aims to develop a predictive model that can help identify individuals at risk based on clinical features.
 
 ---
 
 ## Dataset
-
-The dataset used in this project is the **Heart Disease dataset** containing **918 patient records** and **12 clinical features**, including:
+The dataset contains medical attributes such as:
 
 - Age
 - Sex
-- Chest Pain Type
-- Resting Blood Pressure
-- Cholesterol
-- Fasting Blood Sugar
-- Resting ECG
-- Maximum Heart Rate
-- Exercise-induced Angina
-- ST Depression (Oldpeak)
-- ST Segment Slope
-
-Target variable:
-HeartDisease
-0 = No disease
-1 = Heart disease
-
-
----
-
-## Project Pipeline
-
-The project follows a complete data science workflow:
-
-### 1. Data Cleaning
-- Removed duplicates
-- Handled missing values
-- Corrected invalid cholesterol values
-- Feature engineering for ECG signals
-
-Notebook:  
-`notebooks/1dataCleaning.ipynb`
-
----
-
-### 2. Exploratory Data Analysis (EDA)
-
-Data visualization was used to understand patterns and relationships between variables.
-
-Examples of visualizations include:
-
-- Feature distributions
-- Correlation heatmaps
-- Age vs heart disease boxplots
-- Exercise angina vs disease risk
-- Pair plots for key features
-
-Notebook:  
-`notebooks/2visualization.ipynb`
-
----
-
-### 3. Feature Engineering
-
-Key preprocessing steps included:
-
-- Splitting the **Oldpeak** feature into:
-  - ST Depression
-  - ST Elevation
-- Log transformation of skewed variables
-- One-hot encoding for categorical features
-- Standardization using **StandardScaler**
-
----
-
-### 4. Machine Learning Models
-
-Two supervised learning algorithms were trained and compared:
-
-**Logistic Regression**
-
-- Simple interpretable model
-- Good baseline classifier
-
-**Random Forest**
-
-- Ensemble model
-- Handles nonlinear relationships well
-- Reduces overfitting
-
-Notebook:  
-`notebooks/3modeling.ipynb`
-
----
-
-## Model Evaluation
-
-Models were evaluated using:
-
-- Accuracy
-- Confusion Matrix
-- Precision / Recall
-- ROC Curve
-- ROC-AUC Score
-
-### Results
-
-| Model | Accuracy |
-|------|------|
-| Logistic Regression | ~85% |
-| Random Forest | ~87% |
-
-Random Forest achieved slightly better performance and stronger ROC curve characteristics.
-
----
-
-## Key Predictive Features
-
-The most important predictors of heart disease were:
-
-- ST segment slope
-- Exercise-induced angina
-- Maximum heart rate
-- Age
 - Chest pain type
+- Blood pressure
+- Cholesterol levels
+- Maximum heart rate
+- ST depression
+- Other clinical measurements
 
-These findings align with known cardiology risk factors.
-
----
-
-## Repository Structure
-heart-disease-prediction-ml
-
-data/
-HeartPrediction.csv
-heart_cleaned.csv
-heart_disease_predictions.csv
-
-notebooks/
-1dataCleaning.ipynb
-2visualization.ipynb
-3modeling.ipynb
-
-models/
-rf_model.pkl
-scaler.pkl
-columns.pkl
-
-images/
-visualization outputs and ROC curves
-
+The dataset is commonly used in machine learning research for heart disease prediction.
 
 ---
 
-## Technologies Used
+## Tools & Technologies
 
 - Python
 - Pandas
@@ -170,21 +41,112 @@ visualization outputs and ROC curves
 
 ---
 
-## Future Improvements
+## Methodology
 
-Possible improvements to this project include:
+1. Data Cleaning
+2. Exploratory Data Analysis
+3. Feature Engineering
+4. Train/Test Split
+5. Model Training
+6. Model Evaluation
 
-- Hyperparameter tuning
-- Additional ML models (XGBoost, Gradient Boosting)
-- Cross-validation strategies
-- Deployment as a prediction API
-- Building a clinical risk dashboard
+Machine learning algorithms tested:
+
+- Logistic Regression
+- Random Forest
+- Support Vector Machine
+- K-Nearest Neighbors
 
 ---
 
-## Author
+## Results
 
-**A M**
+The models were evaluated using classification metrics such as:
 
-Master's in Data Science & Business Analytics  
-UNYT
+- Accuracy
+- Precision
+- Recall
+- F1-score
+
+The best-performing model achieved strong predictive performance on the test dataset.
+
+---
+
+## Exploratory Data Analysis
+
+### Feature Distributions
+
+![Age Distribution](images/age_distribution.png)
+
+Understanding how key variables such as age are distributed helps identify patterns and potential relationships with heart disease.
+
+---
+
+### Feature Relationships
+
+![Pairplot](images/pairplot_features.png)
+
+Pairwise relationships between features highlight correlations and potential predictive patterns in the dataset.
+
+---
+
+### Correlation Analysis
+
+![Correlation Heatmap](images/correlation_heatmap.png)
+
+The correlation matrix helps identify which clinical variables have stronger relationships with heart disease.
+
+---
+
+### Feature Histograms
+
+![Feature Histograms](images/feature_histograms.png)
+
+Distribution plots of numerical variables provide insight into the spread and skewness of the dataset.
+
+---
+
+## Model Performance
+
+![ROC Curve](images/roc_curve.png)
+
+The ROC curve compares model performance.  
+Random Forest achieved the best performance with **AUC ≈ 0.93**, outperforming Logistic Regression.
+
+## Project Structure
+
+```
+heart-disease-prediction-ml
+│
+├── data
+├── notebooks
+├── images
+├── README.md
+```
+
+---
+
+## How to Run
+
+1. Clone the repository
+
+```
+git clone https://github.com/goldteaa/heart-disease-prediction-ml.git
+```
+
+2. Install dependencies
+
+```
+pip install pandas numpy scikit-learn matplotlib seaborn
+```
+
+3. Run the notebook in Jupyter
+
+---
+
+## Future Improvements
+
+- Hyperparameter tuning
+- Cross-validation
+- Model explainability (SHAP / feature importance)
+- Deploy the model as a web application
